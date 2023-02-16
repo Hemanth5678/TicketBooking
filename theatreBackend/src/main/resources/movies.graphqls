@@ -1,0 +1,40 @@
+type Movie {
+    id: ID!
+    rate: Float
+    nowPlaying: Boolean!
+    duration: Int
+    year: Int
+    description: String
+    title: String
+    language: String
+    imgURL: String
+    ytTrailerId: String
+    director: String
+    actors: [String]
+    writers: [String]
+}
+
+extend type Query {
+    findAllMovies: [Movie]!
+    findNowPlayingMovies: [Movie]!
+}
+
+extend type Mutation {
+    newMovie( movie: MovieInput!) : Movie!
+}
+
+input MovieInput {
+	id: ID!
+    rate: Float
+    nowPlaying: Boolean!
+    duration: Int
+    year: Int
+    description: String
+    title: String
+    language: String
+    imgURL: String
+    ytTrailerId: String
+    director: String
+    actors: [String]
+    writers: [String]
+}

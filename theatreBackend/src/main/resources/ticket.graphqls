@@ -1,0 +1,13 @@
+type Ticket {
+	id: ID!
+	user: User!
+	movie: Movie!
+	theatre: Theatre!
+	date: String
+	time: String
+	seat: Int
+}
+
+extend type Query {
+	findAllTickets: [Ticket]
+}

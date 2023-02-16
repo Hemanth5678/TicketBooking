@@ -1,0 +1,10 @@
+type Theatre{
+	id: ID!
+	name: String
+	capacity: Int
+	shows: [Show]!
+}
+
+extend type Query {
+	findAllTheatres: [Theatre]!
+}

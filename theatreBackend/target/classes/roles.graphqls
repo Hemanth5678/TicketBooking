@@ -1,0 +1,13 @@
+type Role {
+    roleId: ID!
+    roleName: ERole!
+}
+
+enum ERole {
+	ROLE_USER,
+	ROLE_ADMIN
+}
+
+extend type Query {
+    findAllRoles: [Role]!
+}

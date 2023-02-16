@@ -1,0 +1,25 @@
+type User {
+    id: ID!
+    username: String!
+    email: String!
+    password: String
+    roles: [Role]!
+}
+type JWTResponse {
+	token: String!
+	user: User!
+}
+
+extend type Query {
+    findAllUsers: [User]!
+    userLogin( email: String!, password: String!): JWTResponse!
+    userByEmail( email: String!): User!
+}
+
+extend type Mutation {
+    newUser( user: UserInput!) : User!
+}
+
+input UserInput {
+	username: String!, email: String!, password: String!
+}

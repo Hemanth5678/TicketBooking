@@ -1,0 +1,12 @@
+type Show {
+	id: ID!
+	movie: Movie!
+	showDate: String
+	showTime: String
+	seats: [Int]
+}
+
+extend type Query {
+	findAllShows: [Show]!
+}
+
